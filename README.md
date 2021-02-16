@@ -40,6 +40,7 @@ T.B.D.
 ./
 │  .babelrc
 │  .gitignore
+│  .prettierrc
 │  package-lock.json
 │  package.json
 │  README.md
@@ -112,6 +113,11 @@ T.B.D.
 $ npm run build
 ```
 
+#### 結果確認
+
+`./demo/demo_*.html` を直接ブラウザで開いて確認をします。（LiveReload 的な機能は使いません。）
+
+
 ### 環境構築履歴
 
 環境を構築した実行履歴です。今後のメンテナンス時の参考のため記録しておきます。
@@ -146,11 +152,6 @@ $ touch .babelrc
 ```
 
 `.babelrc` の中身は以下の通りです。
-以下の3つの処理を行います。
-
-1. ES5 変換（ `babel-preset-env` を利用）
-2. minify（ `babel-minify` と `babel-preset-minify` を利用）
-3. コメント削除
 
 ```json
 {
@@ -159,14 +160,15 @@ $ touch .babelrc
 }
 ```
 
+以下の3つの処理を行います。
+
+1. ES5 変換（ `babel-preset-env` を利用）
+2. minify（ `babel-minify` と `babel-preset-minify` を利用）
+3. コメント削除
+
 ##### Babel の実行コマンドの追加
 
 `package.json` の中身は以下の通りです。
-`"build": "babel ./src --out-dir ./dist/js && babel ./src --out-file ./demo/bundle.js",` を追記しています。
-追記部分は以下の2つの処理を行います。
-
-1. はてなブログへコピペ用の `./dist/js/*.js` を出力
-2. 表示確認用 HTML で読み込む `./demo/bundle.js` を出力
 
 ```json
 {
@@ -189,6 +191,32 @@ $ touch .babelrc
   }
 }
 ```
+
+`"build": "babel ./src --out-dir ./dist/js && babel ./src --out-file ./demo/bundle.js",` を追記しています。
+追記部分は以下の2つの処理を行います。
+
+1. はてなブログへコピペ用の `./dist/js/*.js` を出力
+2. 表示確認用 HTML で読み込む `./demo/bundle.js` を出力
+
+##### prettier の設定ファイルの追加
+
+prettier の設定を作成します。VSCode のプラグインで利用されることを想定してのもので、 `npm run build` の中で利用する（自動で変換を掛ける）想定ではありません。
+
+```bash
+$ touch .babelrc
+```
+
+`.prettierrc` の中身は以下の通りです。
+
+```json
+{
+  "singleQuote": true
+}
+```
+
+以下の1つの設定を定義しています。
+
+1. 文字列リテラルにはシングルクォートを利用（非ダブルクォート）
 
 #### Git 実行環境の作成
 
