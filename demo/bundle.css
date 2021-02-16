@@ -1,0 +1,25 @@
+/* <system section="theme" selected="smooth"> */
+/* @import "/css/theme/smooth/smooth.css"; */
+@import "./original/theme.css";
+/* </system> */
+
+/* カテゴリ */
+@import "../dist/css/category.css";
+
+/* 目次 */
+@import "../dist/css/toc.css";
+
+/* 記事ヘッダーの作成日・更新日 */
+@import "../dist/css/updated-at.css";
+
+/* 記事内 */
+@import "../dist/css/article.css";
+
+/* サイドバーの目次 */
+@import "../dist/css/toc-following.css";
+
+/* ヘッダー */
+@import "../dist/css/header.css";
+
+/* ヘッダーのグローバルメニュー */
+@import "../dist/css/global-menu.css";

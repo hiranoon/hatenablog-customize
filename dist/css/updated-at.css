@@ -1,0 +1,36 @@
+/* 記事ヘッダーの作成日・更新日 */
+.entry-header .entry-date {
+    color: #6f8383;
+  }
+  .entry-header .entry-date a time {
+    font-size: 0;
+  }
+  .entry-header .entry-date a time > span {
+    font-size: 0.9rem;
+  }
+  .entry-header .entry-date a time::before {
+    font-family: blogicon;
+    content: "\f03a"; /* blogicon-calendar */
+    font-size: 0.9rem;
+    margin-right: 3px;
+  }
+  .entry-header .entry-date a time::after {
+    content: "作成";
+    font-size: 0.9rem;
+    margin-left: 3px;
+  }
+  .entry-header .entry-date .modified-date {
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+  .entry-header .entry-date .modified-date::before {
+    font-family: blogicon;
+    content: "\f02b"; /* blogicon-repeat */
+    font-size: 0.9rem;
+    margin-right: 3px;
+  }
+  .entry-header .entry-date .modified-date::after {
+    content: "更新";
+    font-size: 0.9rem;
+    margin-left: 3px;
+  }

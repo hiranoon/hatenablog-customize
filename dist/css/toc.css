@@ -1,0 +1,77 @@
+/* 記事内の目次 */
+.entry-content ul.table-of-contents:before {
+  content: "目次";
+}
+.entry-content ul.table-of-contents {
+  margin: 1.5rem 0;
+  background-color: #f9fafb;
+}
+
+/* 記事内の目次への連番付与 */
+.entry-content ul.table-of-contents,
+.entry-content ul.table-of-contents ul {
+  counter-reset: cnt;
+  list-style: none;
+}
+.entry-content ul.table-of-contents li:before {
+  content: counters(cnt, "-");
+  counter-increment: cnt;
+  font-size: 0.9em;
+  margin-right: 5px;
+}
+
+/* 記事内の見出しへの連番付与 */
+.entry-content {
+  counter-reset: cnt-h2;
+}
+.entry-content h2 {
+  counter-reset: cnt-h3;
+}
+.entry-content h2::before {
+  counter-increment: cnt-h2;
+  content: counter(cnt-h2);
+}
+.entry-content h3 {
+  counter-reset: cnt-h4;
+}
+.entry-content h3::before {
+  counter-increment: cnt-h3;
+  content: counter(cnt-h2) "-" counter(cnt-h3);
+}
+.entry-content h4 {
+  counter-reset: cnt-h5;
+}
+.entry-content h4::before {
+  counter-increment: cnt-h4;
+  content: counter(cnt-h2) "-" counter(cnt-h3) "-" counter(cnt-h4);
+}
+.entry-content h5 {
+  counter-reset: cnt-h6;
+}
+.entry-content h5::before {
+  counter-increment: cnt-h5;
+  content: counter(cnt-h2) "-" counter(cnt-h3) "-" counter(cnt-h4) "."
+    counter(cnt-h5);
+}
+.entry-content h6::before {
+  counter-increment: cnt-h6;
+  content: counter(cnt-h2) "-" counter(cnt-h3) "-" counter(cnt-h4) "-"
+    counter(cnt-h5) "-" counter(cnt-h6);
+}
+.entry-content h2::before,
+.entry-content h3::before,
+.entry-content h4::before,
+.entry-content h5::before,
+.entry-content h6::before {
+  margin: 0 0.3em;
+}
+
+/* サイドバーの目次への連番付与 */
+#stoc ol {
+  counter-reset: cnt;
+  list-style: none;
+}
+#stoc ol li:before {
+  content: counters(cnt, "-");
+  counter-increment: cnt;
+}
