@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
       settings.delimiter = settingsElem.dataset.delimiter;
     } else {
       // 取得できなかった場合はデフォルト値を用意します
-      settings.delimiter = '-';
+      settings.delimiter = '__';
     }
     return settings;
   };
