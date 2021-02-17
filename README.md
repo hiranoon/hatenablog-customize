@@ -14,8 +14,8 @@
 
 | 利用ファイル | 内容 |
 | ------------ | ---- |
-| [category.js](dist/js/category.js)    | T.B.D. |
-| [category.css](dist/css/category.css) | T.B.D. |
+| [category.html](dist/html/category.html) | T.B.D. |
+| [category.css](dist/css/category.css)    | T.B.D. |
 
 T.B.D.
 
@@ -24,8 +24,8 @@ T.B.D.
 
 | 利用ファイル | 内容 |
 | ------------ | ---- |
-| [updated-at.js](dist/js/updated-at.js)    | T.B.D. |
-| [updated-at.css](dist/css/updated-at.css) | T.B.D. |
+| [updated-at.html](dist/js/updated-at.html) | T.B.D. |
+| [updated-at.css](dist/css/updated-at.css)  | T.B.D. |
 
 T.B.D.
 
@@ -38,43 +38,83 @@ T.B.D.
 
 ```
 ./
-│  .babelrc
 │  .gitignore
 │  .prettierrc
+│  babel.config.json
 │  package-lock.json
 │  package.json
 │  README.md
 │
 ├─demo             表示確認用
 │  │  demo_*.html    表示確認用の HTML
-│  │  bundle.js      表示確認用にまとめた JavaScript
-│  │  bundle.css     表示確認用にまとめた CSS
+│  │  bundle.js      Babel により生成される
+│  │  bundle.css     ★ 直接編集する
 │  │
 │  └─original       demo_*.html で読み込んでいるファイル置き場
 │
 ├─dist             はてなブログコピペ用
 │  ├─css
-│  │      *.css      直接編集する
+│  │      *.css      ★ 直接編集する
+│  ├─html
+│  │      *.html     inliner により生成される
 │  └─js
 │          *.js       Babel により生成される
 │
 ├─node_modules
 │  └─...
 │
+├─scripts          npm scripts で実行する複雑なスクリプトの置き場
+│      *.sh
+│
 └─src              Babel の変換元
-        *.js           直接編集する
+    ├─html
+    │      *.html     ★ 直接編集する
+    └─js
+            *.js       ★ 直接編集する
 ```
 
 | ファイル名           | 内容 |
 | -------------------- | ---- |
-| `./src/*.js`         | カスタマイズ用の JavaScript。**編集対象**です。変換前のため直接利用されません。 |
-| `./dist/js/*.js`     | Babel で変換後の JavaSdript。「管理画面＞デザイン＞カスタマイズ＞フッタ」へのコピペ用です。 |
-| `./dist/css/*.css`   | カスタマイズ用の CSS。**編集対象**です。はてなブログの「管理画面＞デザイン＞カスタマイズ＞デザインCSS」へのコピペ用です。 |
+| `./src/js/*.js`      | カスタマイズ用の JavaScript。 **編集対象** です。変換前のため直接利用されません。 |
+| `./src/html/*.js`    | カスタマイズ用の HTML。 **編集対象** です。変換前のため直接利用されません。 |
+| `./dist/js/*.js`     | Babel で変換後の JavaSdript。`./src/html/*.js` で参照されます。 |
+| `./dist/html/*.html` | inliner で変換後の HTML。 **「管理画面＞デザイン＞カスタマイズ＞フッタ」へのコピペ用** です。 |
+| `./dist/css/*.css`   | カスタマイズ用の CSS。**編集対象**です。はてなブログの **「管理画面＞デザイン＞カスタマイズ＞デザインCSS」へのコピペ用** です。 |
 | `./demo/demo_*.html` | 表示確認用 HTML。直接ブラウザで開いて確認します。 |
 | `./demo/bundle.js`   | Babel で変換＆1つにまとめられた後のJavaSdript。表示確認用 HTML で利用しています。 |
-| `./demo/bundle.css`  | `@import` 文で1つにまとめたCSS。表示確認用 HTML で利用しています。 |
+| `./demo/bundle.css`  | `@import` 文で1つにまとめたCSS。 **編集対象** です。 `./dist/css/*.css` が増えるたびにこちらの import 文も増やします。表示確認用 HTML で利用しています。 |
 
 #### ファイルの関係
+
+##### はてなブログコピペ用
+
+はてなブログコピペ用のファイルでは以下のようにファイルを参照しています。
+
+```
+./dist/html/*.html
+↑
+↑（変換 : inliner）
+↑
+└─./src/html/*.js
+    ↑
+    ↑（参照 : <script src="...">）
+    ↑
+    └─./dist/js/*.js
+        ↑
+        ↑（変換 : Babel）
+        ↑
+        └─./src/*.js
+```
+
+
+
+```
+./dist/css/*.css
+  （※直接編集します。）
+```
+
+
+##### 表示確認用 HTML
 
 表示確認用の `./demo_*.html` では以下のようにファイルを参照しています。
 
@@ -134,14 +174,14 @@ $ touch README.md
 
 #### Babel 実行環境の作成
 
-##### node_modules のインストール
-
-`npm init -y` で `package.json` を作成し、 `npm install --save-dev` で Babel に関連するモジュールをインストールします。（Babel 7 から大体のモジュールは `babel-...` から `@babel/...` という形式に見直されました。が、 `babel-preset-minify` は取り残されている模様。なので minify だけ違和感ありますね。）
+##### Babel のインストール
 
 ```bash
 $ npm init -y
 $ npm install --save-dev @babel/core @babel/cli @babel/preset-env babel-preset-minify
 ```
+
+`npm init -y` で `package.json` を作成し、 `npm install --save-dev` で Babel に関連するモジュールをインストールします。（Babel 7 から大体のモジュールは `babel-...` から `@babel/...` という形式に見直されました。が、 `babel-preset-minify` は取り残されている模様。なので minify だけ違和感ありますね。）
 
 ##### Babel の設定ファイルの追加
 
@@ -170,7 +210,7 @@ $ touch babel.config.json
 }
 ```
 
-以下の3つの処理を行います。
+以下の3つの設定を行っています。
 
 1. ES5 変換（ `@babel/preset-env` を利用し、 ie11 で利用可能な設定とした）
 2. minify（ `babel-preset-minify` を利用）
@@ -182,31 +222,71 @@ $ touch babel.config.json
 
 ```json
 {
-  "name": "hatenablog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  // ...中略...
   "scripts": {
-    "build": "babel ./src/js --out-dir ./dist/js && babel ./src/js --out-file ./demo/bundle.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-demojs": "babel ./src/js --out-file ./demo/bundle.js",
+    "build-distjs": "babel ./src/js --out-dir ./dist/js",
+    // ...中略...
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.12.16",
-    "@babel/core": "^7.12.16",
-    "@babel/preset-env": "^7.12.16",
-    "babel-preset-minify": "^0.5.1"
-  }
+  // ...中略...
 }
 ```
 
-`"build": "babel ./src --out-dir ./dist/js && babel ./src --out-file ./demo/bundle.js",` を追記しています。
+`"build": "babel ./src --out-dir ./dist/js` と `babel ./src --out-file ./demo/bundle.js",` を追記しています。
 追記部分は以下の2つの処理を行います。
 
-1. はてなブログへコピペ用の `./dist/js/*.js` を出力
-2. 表示確認用 HTML で読み込む `./demo/bundle.js` を出力
+1. `npm run build-demojs` : はてなブログへコピペ用の `./dist/js/*.js` を出力
+2. `npm run build-distjs` : 表示確認用 HTML で読み込む `./demo/bundle.js` を出力
+
+
+#### inliner 実行環境の作成
+
+inliner は、 HTML ファイルが参照してる js や css や画像ファイルを読み込んで1つの HTML ファイルに変換してくれるツールです。
+例えば、 `<script src="hoge.js"></script>` が `<script>console.log('hoge');</script>` のように、外部JS を読み込んだ結果に変換されます。
+
+##### inliner のインストール
+
+```bash
+$ npm install --save-dev inliner
+```
+
+##### inliner を実行するスクリプトの追加
+
+inliner を実行するスクリプトは若干複雑になるので、別ファイルに切り出しておきます。
+
+```bash
+$ mkdir scripts
+$ touch ./scripts/build-disthtml.sh
+```
+
+中身は [build-disthtml.sh](scripts/build-disthtml.sh) を直接参照ください。 for 文で全ファイルに対して `inliner` コマンドを実行しているだけです。（ `inliner` はディレクトリを対象にできないため。）
+
+##### inliner の実行コマンドの追加
+
+`package.json` の中身は以下の通りです。
+
+```json
+{
+  // ...中略...
+  "scripts": {
+    "build-demojs": "babel ./src/js --out-file ./demo/bundle.js",
+    "build-distjs": "babel ./src/js --out-dir ./dist/js",
+    "build-disthtml": "bash ./scripts/build-disthtml.sh",
+    "build": "npm run build-demojs && npm run build-distjs && npm run build-disthtml",
+    // ...中略...
+  },
+  // ...中略...
+}
+```
+
+`"build-disthtml": "bash ./scripts/build-disthtml.sh",` と `"build": "npm run build-demojs && npm run build-distjs && npm run build-disthtml",` を追記しています。
+追記部分は以下の2つの処理を行います。
+
+1. `npm run build-disthtml` : はてなブログへコピペ用の `./dist/html/*.html` を出力
+2. `npm run build` : すべての `npm run build-*` をまとめて実行
+
+これで `npm run build` だけ実行すればOKになりました。
+
 
 ##### prettier の設定ファイルの追加
 
