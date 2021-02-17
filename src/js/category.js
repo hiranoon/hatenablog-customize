@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const settings = {};
     if (settingsElem) {
       settings.delimiter = settingsElem.dataset.delimiter;
+      settings.initialState = settingsElem.dataset.initialState;
     } else {
       // 取得できなかった場合はデフォルト値を用意します
       settings.delimiter = '__';
+      settings.initialState = 'close';
     }
     return settings;
   };
@@ -136,6 +138,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const checkbox = document.createElement('input');
         checkbox.setAttribute('type', 'checkbox');
         checkbox.setAttribute('id', `category-toggle-checkbox-${index}`);
+        if (settings.initialState === 'open') {
+          checkbox.checked = true; // 設定値が open の場合のみ初期状態は開く
+        }
         checkbox.classList.add('category-toggle-checkbox');
         li.insertBefore(checkbox, li.firstElementChild);
       } else {

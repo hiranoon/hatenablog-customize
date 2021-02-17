@@ -12,13 +12,13 @@
   display: none;
 }
 .hatena-module-category label.category-toggle-checkbox-label::before {
-  content: "▼"; /* hide */
+  content: "▶"; /* hide */
   cursor: pointer;
 }
 .hatena-module-category
   input.category-toggle-checkbox:checked
   + .category-toggle-checkbox-label::before {
-  content: "▶"; /* show */
+  content: "▼"; /* show */
 }
 .hatena-module-category label.category-not-to-toggle::before {
   content: "・"; /* not-to-toggle */
