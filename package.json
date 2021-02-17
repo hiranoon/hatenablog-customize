@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel ./src --out-dir ./dist/js && babel ./src --out-file ./demo/bundle.js",
+    "build": "babel ./src/js --out-dir ./dist/js && babel ./src/js --out-file ./demo/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-minify": "^0.5.1",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
     "babel-preset-minify": "^0.5.1"
   }
 }

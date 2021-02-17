@@ -136,34 +136,44 @@ $ touch README.md
 
 ##### node_modules のインストール
 
-`npm init -y` で `package.json` を作成し、 `npm install --save-dev` で Babel に関連するモジュールをインストールします。
+`npm init -y` で `package.json` を作成し、 `npm install --save-dev` で Babel に関連するモジュールをインストールします。（Babel 7 から大体のモジュールは `babel-...` から `@babel/...` という形式に見直されました。が、 `babel-preset-minify` は取り残されている模様。なので minify だけ違和感ありますね。）
 
 ```bash
 $ npm init -y
-$ npm install --save-dev babel-cli babel-preset-env babel-minify babel-preset-minify
+$ npm install --save-dev @babel/core @babel/cli @babel/preset-env babel-preset-minify
 ```
 
 ##### Babel の設定ファイルの追加
 
-Babel の設定を作成します。
+Babel の設定を作成します。（Babel 7 からは、 `babel.config.json` はプロジェクトの全体設定で、 `.babelrc` はファイルごとの設定という位置づけらしい。）
 
 ```bash
-$ touch .babelrc
+$ touch babel.config.json
 ```
 
-`.babelrc` の中身は以下の通りです。
+`babel.config.json` の中身は以下の通りです。
 
 ```json
 {
-  "presets": ["env", "minify"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "ie": "11"
+        }
+      }
+    ],
+    "minify"
+  ],
   "comments": false
 }
 ```
 
 以下の3つの処理を行います。
 
-1. ES5 変換（ `babel-preset-env` を利用）
-2. minify（ `babel-minify` と `babel-preset-minify` を利用）
+1. ES5 変換（ `@babel/preset-env` を利用し、 ie11 で利用可能な設定とした）
+2. minify（ `babel-preset-minify` を利用）
 3. コメント削除
 
 ##### Babel の実行コマンドの追加
@@ -177,16 +187,16 @@ $ touch .babelrc
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel ./src --out-dir ./dist/js && babel ./src --out-file ./demo/bundle.js",
+    "build": "babel ./src/js --out-dir ./dist/js && babel ./src/js --out-file ./demo/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-minify": "^0.5.1",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
     "babel-preset-minify": "^0.5.1"
   }
 }
