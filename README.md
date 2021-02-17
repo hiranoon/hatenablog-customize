@@ -24,7 +24,7 @@ T.B.D.
 
 | 利用ファイル | 内容 |
 | ------------ | ---- |
-| [updated-at.html](dist/js/updated-at.html) | T.B.D. |
+| [updated-at.html](dist/html/updated-at.html) | T.B.D. |
 | [updated-at.css](dist/css/updated-at.css)  | T.B.D. |
 
 T.B.D.
