@@ -1,0 +1,31 @@
+/* サイドバーのカテゴリ */
+.hatena-module-category ul {
+  list-style: none;
+}
+.hatena-module-category ul ul {
+  display: none; /* hide */
+}
+.hatena-module-category ul input.category-toggle-checkbox:checked ~ ul {
+  display: block; /* show */
+}
+.hatena-module-category ul input.category-toggle-checkbox {
+  display: none;
+}
+.hatena-module-category label.category-toggle-checkbox-label::before {
+  content: "▶"; /* hide */
+  cursor: pointer;
+}
+.hatena-module-category
+  input.category-toggle-checkbox:checked
+  + .category-toggle-checkbox-label::before {
+  content: "▼"; /* show */
+}
+.hatena-module-category label.category-not-to-toggle::before {
+  content: "・"; /* not-to-toggle */
+}
+.hatena-module-category label.category-li-label {
+  margin: 0;
+}
+.hatena-module-category label.category-li-label::before {
+  margin-right: 0.3em;
+}

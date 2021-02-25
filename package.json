@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-demojs": "babel ./src/js --out-file ./demo/bundle.js",
-    "build-distjs": "babel ./src/js --out-dir ./dist/js",
-    "build-disthtml": "bash ./scripts/build-disthtml.sh",
-    "build": "npm run build-demojs && npm run build-distjs && npm run build-disthtml",
+    "build-demo-js": "babel ./src/js --out-file ./demo/bundle.js",
+    "build-dist-css": "cp ./src/css/*.css ./dist/css",
+    "build-dist-html": "bash ./scripts/build-dist-html.sh",
+    "build-dist-js": "babel ./src/js --out-dir ./dist/js",
+    "build": "npm run build-demo-js && npm run build-dist-css && npm run build-dist-html && npm run build-dist-js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
