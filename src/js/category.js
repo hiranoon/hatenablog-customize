@@ -19,17 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const getSettings = () => {
     // 設定を定義したタグを取得します
     const settingsElem = document.getElementById('category-settings');
+
     // タグの data 属性から設定値を取得しオブジェクト化します
-    const settings = {};
     if (settingsElem) {
-      settings.delimiter = settingsElem.dataset.delimiter;
-      settings.initialState = settingsElem.dataset.initialState;
+      return JSON.parse(settingsElem.text);
     } else {
       // 取得できなかった場合はデフォルト値を用意します
-      settings.delimiter = '__';
-      settings.initialState = 'close';
+      return {
+        delimiter: '__',
+        initialState: 'close',
+      };
     }
-    return settings;
   };
 
   /**
@@ -93,10 +93,10 @@ document.addEventListener('DOMContentLoaded', function () {
           const currentLi = document.createElement('li');
           currentLi.classList.add(classLevel, classText);
           if (isLast) {
-            // a の中に href と text をセット
+            // 最後の場合は必ずリンクなので、a タグをセット
             currentLi.appendChild(createAnchor(href, text));
           } else {
-            // li に直接 text をセット
+            // 最後ではない場合はリンクではないので、 text のみをセット
             currentLi.textContent = text;
           }
 
@@ -153,18 +153,17 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   /**
-   * 記事タイトル下部のカテゴリを再編成します
+   * 指定されたカテゴリリンクを再編成します
    * @param  {Object} settings 設定オブジェクト
+   * @param  {String} selector 対象とするカテゴリリンクのセレクタ
    */
-  const rebuildEntryCategory = (settings) => {
+  const rebuildCategoryLink = (settings, selector) => {
     // タイトル下部のカテゴリの取得
-    const entryCategoryLinks = document.querySelectorAll(
-      'header.entry-header a.entry-category-link'
-    );
-    if (!entryCategoryLinks.length) return; // 存在チェック
+    const categoryLinks = document.querySelectorAll(selector);
+    if (!categoryLinks.length) return; // 存在チェック
 
     // タイトル下部のカテゴリのループ
-    entryCategoryLinks.forEach((anchor) => {
+    categoryLinks.forEach((anchor) => {
       // デリミタで分割した最後の要素で上書きする
       anchor.textContent = anchor.textContent.split(settings.delimiter).pop();
     });
@@ -176,6 +175,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // サイドバーのカテゴリを再編成します
   rebuildSidebarCategory(settings);
 
-  // 記事タイトル下部のカテゴリを再編成します
-  rebuildEntryCategory(settings);
+  // 個別の記事表示時のタイトル下部のカテゴリを再編成します
+  rebuildCategoryLink(settings, 'a.entry-category-link');
+  // 記事一覧表示時のタイトル下部のカテゴリを再編成します
+  rebuildCategoryLink(settings, 'a.archive-category-link');
 });
