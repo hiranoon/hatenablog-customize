@@ -1,15 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
   /**
    * anchor を生成します
-   * @param  {String} href href属性値
-   * @param  {String} text コンテンツ
+   * @param {String} href href属性値
+   * @param {String} text コンテンツ
    * @return {HTMLElement} anchorタグ
    */
   const createAnchor = (href, text) => {
-    const anchor = document.createElement('a');
-    anchor.setAttribute('href', href);
-    anchor.textContent = text;
-    return anchor;
+    const elem = document.createElement('a');
+    elem.setAttribute('href', href);
+    elem.textContent = text;
+    return elem;
+  };
+
+  /**
+   * label を生成します
+   * @param {String} text コンテンツ
+   * @param {String} classname クラス
+   * @return {HTMLElement} labelタグ
+   */
+  const createLabel = (text, classname) => {
+    const elem = document.createElement('label');
+    if (classname) {
+      elem.classList.add(classname);
+    }
+    elem.textContent = text;
+    return elem;
   };
 
   /**
@@ -34,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /**
    * サイドバーのカテゴリを再編成します
-   * @param  {Object} settings 設定オブジェクト
+   * @param {Object} settings 設定オブジェクト
    */
   const rebuildSidebarCategory = (settings) => {
     // カテゴリ領域の取得
@@ -93,11 +108,11 @@ document.addEventListener('DOMContentLoaded', function () {
           const currentLi = document.createElement('li');
           currentLi.classList.add(classLevel, classText);
           if (isLast) {
-            // 最後の場合は必ずリンクなので、a タグをセット
+            // 最後の場合は必ずリンクなので a タグをセット
             currentLi.appendChild(createAnchor(href, text));
           } else {
-            // 最後ではない場合はリンクではないので、 text のみをセット
-            currentLi.textContent = text;
+            // 最後ではない場合はリンクではないので label タグをセット
+            currentLi.appendChild(createLabel(text, 'category-li-label'));
           }
 
           // li の追加
@@ -154,8 +169,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /**
    * 指定されたカテゴリリンクを再編成します
-   * @param  {Object} settings 設定オブジェクト
-   * @param  {String} selector 対象とするカテゴリリンクのセレクタ
+   * @param {Object} settings 設定オブジェクト
+   * @param {String} selector 対象とするカテゴリリンクのセレクタ
    */
   const rebuildCategoryLink = (settings, selector) => {
     // タイトル下部のカテゴリの取得
