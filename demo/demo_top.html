@@ -233,76 +233,42 @@
                 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
             -->
           <!-- グローバルメニュー -->
-          <nav id="menu">
-            <div id="menu-inner">
-              <div id="btn-content">
-                <span id="menu-btn"><i class="blogicon-reorder"></i></span>
-              </div>
-              <ul id="menu-content">
-                <li>
-                  <a href="https://multimineral-tech.com">Home</a>
-                </li>
-                <li>
-                  <a href="https://multimineral-tech.com/about">About</a>
-                </li>
-                <li>
-                  <a
-                    href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0"
-                    >プログラミング <i class="blogicon-chevron-down"></i
-                  ></a>
-                  <ul class="second-content">
-                    <li>
-                      <a
-                        href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E8%A8%80%E8%AA%9E"
-                        >言語</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA"
-                        >ライブラリ</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB"
-                        >ツール</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a
-                    href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96"
-                    >その他</a
-                  >
-                </li>
-              </ul>
-            </div>
+          <nav id="global-menu">
+            <section id="global-menu-inner">
+              <input type="checkbox" id="menu-toggle-checkbox" />
+              <label id="global-menu-btn" for="menu-toggle-checkbox"
+                ><i class="menu-open blogicon-reorder"></i
+                ><i class="menu-close blogicon-close"></i
+              ></label>
+              <label id="global-menu-btn-background" for="menu-toggle-checkbox"></label>
+              <ul id="global-menu-content"></ul>
+              <h1 id="mobile-title" class="entry-title">
+                <a href="https://multimineral-tech.com/"
+                  >Multi Vitamin &amp; Mineral</a
+                >
+              </h1>
+              <form
+                class="search-form"
+                role="search"
+                action="https://multimineral-tech.com/search"
+                method="get"
+              >
+                <input
+                  type="text"
+                  name="q"
+                  class="search-module-input"
+                  value
+                  placeholder="記事を検索"
+                  required
+                />
+                <input
+                  type="submit"
+                  value="検索"
+                  class="search-module-button"
+                />
+              </form>
+            </section>
           </nav>
-          <div style="clear: both"></div>
-          <script
-            type="text/javascript"
-            src="https://code.jquery.com/jquery-1.9.1.min.js"
-          ></script>
-          <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              var menuBtn = $('#menu-btn');
-              var menuContent = $('#menu-content');
-              menuBtn.click(function () {
-                menuContent.slideToggle();
-              });
-              $(window).resize(function () {
-                var win = window.innerWidth;
-                var p = 768;
-                if (win > p) {
-                  menuContent.show();
-                } else {
-                  menuContent.hide();
-                }
-              });
-            });
-          </script>
           <!--
               ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
               ################################################################################
@@ -1672,335 +1638,170 @@
                   <div class="hatena-module-body">
                     <ul class="hatena-urllist">
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96"
-                          class="category-その他"
-                        >
-                          その他 (12)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__wsl2" class="category-環境・ツール__wsl2">
+                          環境・ツール__wsl2 (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96-%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B"
-                          class="category-その他-お知らせ"
-                        >
-                          その他-お知らせ (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__VSCode" class="category-環境・ツール__VSCode">
+                          環境・ツール__VSCode (6)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96-%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0"
-                          class="category-その他-はてなブログ"
-                        >
-                          その他-はてなブログ (10)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__Typora" class="category-環境・ツール__Typora">
+                          環境・ツール__Typora (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96-%E3%82%AC%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88"
-                          class="category-その他-ガジェット"
-                        >
-                          その他-ガジェット (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__git" class="category-環境・ツール__git">
+                          環境・ツール__git (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96-%E3%82%AC%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88-Android"
-                          class="category-その他-ガジェット-Android"
-                        >
-                          その他-ガジェット-Android (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__CheckStyle" class="category-環境・ツール__CheckStyle">
+                          環境・ツール__CheckStyle (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96-%E3%82%AC%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88-Nexus7%282012%29"
-                          class="category-その他-ガジェット-Nexus7(2012)"
-                        >
-                          その他-ガジェット-Nexus7(2012) (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__Docker" class="category-環境・ツール__Docker">
+                          環境・ツール__Docker (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96-%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2"
-                          class="category-その他-ソフトウェア"
-                        >
-                          その他-ソフトウェア (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__PMD" class="category-環境・ツール__PMD">
+                          環境・ツール__PMD (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96-%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2-Typora"
-                          class="category-その他-ソフトウェア-Typora"
-                        >
-                          その他-ソフトウェア-Typora (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__Babel" class="category-環境・ツール__Babel">
+                          環境・ツール__Babel (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0"
-                          class="category-プログラミング"
-                        >
-                          プログラミング (35)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__SpotBugs" class="category-環境・ツール__SpotBugs">
+                          環境・ツール__SpotBugs (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB"
-                          class="category-プログラミング-ツール"
-                        >
-                          プログラミング-ツール (17)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__Ricty" class="category-環境・ツール__Ricty">
+                          環境・ツール__Ricty (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-Babel"
-                          class="category-プログラミング-ツール-Babel"
-                        >
-                          プログラミング-ツール-Babel (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__node.js" class="category-環境・ツール__node.js">
+                          環境・ツール__node.js (5)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-CheckStyle"
-                          class="category-プログラミング-ツール-CheckStyle"
-                        >
-                          プログラミング-ツール-CheckStyle (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__Prettier" class="category-環境・ツール__Prettier">
+                          環境・ツール__Prettier (3)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-Docker"
-                          class="category-プログラミング-ツール-Docker"
-                        >
-                          プログラミング-ツール-Docker (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__eslint" class="category-環境・ツール__eslint">
+                          環境・ツール__eslint (3)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-eslint"
-                          class="category-プログラミング-ツール-eslint"
-                        >
-                          プログラミング-ツール-eslint (3)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__HTML" class="category-言語・ライブラリ__HTML">
+                          言語・ライブラリ__HTML (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-git"
-                          class="category-プログラミング-ツール-git"
-                        >
-                          プログラミング-ツール-git (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__Markdown" class="category-言語・ライブラリ__Markdown">
+                          言語・ライブラリ__Markdown (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-IntelliJ%20IDEA"
-                          class="category-プログラミング-ツール-IntelliJ-IDEA"
-                        >
-                          プログラミング-ツール-IntelliJ IDEA (5)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__Material-UI" class="category-言語・ライブラリ__Material-UI">
+                          言語・ライブラリ__Material-UI (3)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-node.js"
-                          class="category-プログラミング-ツール-node.js"
-                        >
-                          プログラミング-ツール-node.js (5)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__Spring" class="category-言語・ライブラリ__Spring">
+                          言語・ライブラリ__Spring (5)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-npm"
-                          class="category-プログラミング-ツール-npm"
-                        >
-                          プログラミング-ツール-npm (6)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__React" class="category-言語・ライブラリ__React">
+                          言語・ライブラリ__React (5)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-PMD"
-                          class="category-プログラミング-ツール-PMD"
-                        >
-                          プログラミング-ツール-PMD (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E7%92%B0%E5%A2%83%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB__IntelliJ%20IDEA" class="category-環境・ツール__IntelliJ-IDEA">
+                          環境・ツール__IntelliJ IDEA (5)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-Prettier"
-                          class="category-プログラミング-ツール-Prettier"
-                        >
-                          プログラミング-ツール-Prettier (3)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__JavaScript" class="category-言語・ライブラリ__JavaScript">
+                          言語・ライブラリ__JavaScript (6)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-Ricty"
-                          class="category-プログラミング-ツール-Ricty"
-                        >
-                          プログラミング-ツール-Ricty (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__Spring%20Boot" class="category-言語・ライブラリ__Spring-Boot">
+                          言語・ライブラリ__Spring Boot (6)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-SpotBugs"
-                          class="category-プログラミング-ツール-SpotBugs"
-                        >
-                          プログラミング-ツール-SpotBugs (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__npm" class="category-言語・ライブラリ__npm">
+                          言語・ライブラリ__npm (6)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-tsc"
-                          class="category-プログラミング-ツール-tsc"
-                        >
-                          プログラミング-ツール-tsc (2)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__TypeScript" class="category-言語・ライブラリ__TypeScript">
+                          言語・ライブラリ__TypeScript (7)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-Visual%20Studio%20Code"
-                          class="category-プログラミング-ツール-Visual-Studio-Code"
-                        >
-                          プログラミング-ツール-Visual Studio Code (6)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__CSS" class="category-言語・ライブラリ__CSS">
+                          言語・ライブラリ__CSS (7)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%84%E3%83%BC%E3%83%AB-wsl2"
-                          class="category-プログラミング-ツール-wsl2"
-                        >
-                          プログラミング-ツール-wsl2 (1)
+                        <a href="https://multimineral-tech.com/archive/category/%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA__Java" class="category-言語・ライブラリ__Java">
+                          言語・ライブラリ__Java (8)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA"
-                          class="category-プログラミング-ライブラリ"
-                        >
-                          プログラミング-ライブラリ (10)
+                        <a href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96__%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0" class="category-その他__はてなブログ">
+                          その他__はてなブログ (11)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA-MaterialUI"
-                          class="category-プログラミング-ライブラリ-MaterialUI"
-                        >
-                          プログラミング-ライブラリ-MaterialUI (3)
+                        <a href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96__%E3%82%AC%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88" class="category-その他__ガジェット">
+                          その他__ガジェット (1)
                         </a>
                       </li>
-
+                    
                       <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA-React"
-                          class="category-プログラミング-ライブラリ-React"
-                        >
-                          プログラミング-ライブラリ-React (5)
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA-Spring"
-                          class="category-プログラミング-ライブラリ-Spring"
-                        >
-                          プログラミング-ライブラリ-Spring (5)
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA-Spring%20Boot"
-                          class="category-プログラミング-ライブラリ-Spring-Boot"
-                        >
-                          プログラミング-ライブラリ-Spring Boot (6)
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E8%A8%80%E8%AA%9E"
-                          class="category-プログラミング-言語"
-                        >
-                          プログラミング-言語 (26)
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E8%A8%80%E8%AA%9E-CSS"
-                          class="category-プログラミング-言語-CSS"
-                        >
-                          プログラミング-言語-CSS (7)
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E8%A8%80%E8%AA%9E-Java"
-                          class="category-プログラミング-言語-Java"
-                        >
-                          プログラミング-言語-Java (8)
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E8%A8%80%E8%AA%9E-JavaScript"
-                          class="category-プログラミング-言語-JavaScript"
-                        >
-                          プログラミング-言語-JavaScript (5)
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E8%A8%80%E8%AA%9E-Markdown"
-                          class="category-プログラミング-言語-Markdown"
-                        >
-                          プログラミング-言語-Markdown (1)
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E8%A8%80%E8%AA%9E-Promise"
-                          class="category-プログラミング-言語-Promise"
-                        >
-                          プログラミング-言語-Promise (1)
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
-                          href="https://multimineral-tech.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E8%A8%80%E8%AA%9E-TypeScript"
-                          class="category-プログラミング-言語-TypeScript"
-                        >
-                          プログラミング-言語-TypeScript (7)
+                        <a href="https://multimineral-tech.com/archive/category/%E3%81%9D%E3%81%AE%E4%BB%96__%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B" class="category-その他__お知らせ">
+                          その他__お知らせ (1)
                         </a>
                       </li>
                     </ul>
@@ -2188,21 +1989,37 @@
           -->
           <!-- ##### ↓↓↓↓↓[HTML]↓↓↓↓↓ ##### -->
           <footer id="footer">
-            <a href="https://multimineral-tech.com/about">このブログについて</a>
+            <a href="https://multimineral-tech.com"
+              ><i class="blogicon-home"></i> Home</a
+            >
+            <span>|</span>
+            <a href="https://multimineral-tech.com/about"
+              ><i class="blogicon-info"></i> このブログについて</a
+            >
             <span>|</span>
             <a href="https://multimineral-tech.com/privacy-policy"
-              >プライバシーポリシー</a
+              ><i class="blogicon-warning"></i> プライバシーポリシー</a
             >
           </footer>
+          <!-- ##### ↑↑↑↑↑[HTML]↑↑↑↑↑ ##### -->
           <!-- ##### ↓↓↓↓↓[JavaScript]↓↓↓↓↓ ##### -->
+          <!-- グローバルメニュー -->
+          <script id="global-menu-settings" type="application/json">
+            {
+              "delimiter": "__"
+            }
+          </script>
           <!-- カテゴリ -->
           <script id="category-settings" type="application/json">
             {
-              "delimiter": "-",
+              "delimiter": "__",
               "initialState": "close"
             }
           </script>
-          <script src="./bundle.js"></script>
+          <!-- 各JavaScript -->
+          <script src="../src/js/global-menu.js"></script>
+          <script src="../src/js/category.js"></script>
+          <script src="../src/js/updated-at.js"></script>
           <!-- ##### ↑↑↑↑↑[JavaScript]↑↑↑↑↑ ##### -->
 
           <!-- 追尾する目次 ver3.3.0  https://git.io/stoc -->

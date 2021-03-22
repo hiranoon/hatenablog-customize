@@ -1,119 +1,260 @@
 /* ヘッダーのグローバルメニュー */
-#menu {
-  width: 100%;
-  margin: 10px auto;
+#global-menu,
+#global-menu a,
+#global-menu span,
+#global-menu label {
+  color: #ddd;
+  font-size: 15px;
+  margin: 0;
+}
+#global-menu {
+  margin: 0 auto 10px;
   background: #444;
 }
-#menu-inner {
-  width: 100%;
-  height: 40px;
+#global-menu-inner {
+  display: flex;
+  align-items: center;
   margin: 0 auto;
-  background: #444;
 }
-#menu-btn {
+@media (min-width: 1200px) {
+  #global-menu-inner {
+    width: 1200px;
+  }
+}
+#global-menu form.search-form {
+  width: 240px;
+  margin: 6px 20px 6px auto;
+  border-radius: 3px;
+}
+#global-menu form.search-form input.search-module-input {
+  border-radius: 3px;
+}
+#global-menu-content {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  list-style: none;
+}
+/* 2段目のリスト */
+#global-menu-content > li {
+  position: relative;
+}
+#global-menu-content > li.global-menu-search {
+  padding: 5px;
+}
+#global-menu-content > li > a,
+#global-menu-content > li > span,
+#global-menu-content > li > label {
+    display: block;
+  padding: 10px 20px;
+}
+#global-menu-content > li:hover > a,
+#global-menu-content > li:hover > span,
+#global-menu-content > li:hover > label {
+  color: #fff;
+}
+/* 2段目のリスト */
+#global-menu-content > li > ul {
   display: none;
 }
-#menu-content {
-  padding-left: 0;
-  margin: 0 auto;
-  width: 800px;
-  height: 100%;
-  list-style-type: none;
+@keyframes dropdownshow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
 }
-#menu-content > li {
-  position: relative;
-  float: left;
-  height: 100%;
-  text-align: center;
-  width: 200px;
-}
-#menu-content > li > a {
-  position: relative;
+#global-menu-content > li:hover > ul {
   display: block;
-  height: 100%;
-  width: 200px;
-  line-height: 40px;
-  background: #444;
-  color: #fff;
-  font-size: 80%;
-  text-decoration: none;
-  z-index: 2;
+  position: absolute;
+  top: 30px;
+  left: 18px;
+  padding-right: 40px;
+  z-index: 1;
+  background: #555;
+  border: 1px solid #444;
+  border-radius: 5px;
+  animation: dropdownshow 0.3s ease 0s;
 }
-#menu-content > li > a:hover {
-  background: #e9f0f2;
-  color: #586767;
+#global-menu-content > li > ul li {
+  position: relative;
+  width: 100%;
+  margin: 15px 0 15px 15px;
+  padding-left: 20px;
+  white-space: nowrap;
 }
-#menu-content > li > a > .blogicon-chevron-down {
+#global-menu-content > li > ul ul::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  transform: rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #ccc;
+  border-right: 2px solid #ccc;
   margin-right: 5px;
 }
-#menu-content > li > ul.second-content {
-  visibility: hidden;
+#global-menu-content > li > ul li a::before,
+#global-menu-content > li > ul li span::before,
+#global-menu-content > li > ul li label::before {
+  content: '・';
   position: absolute;
-  top: 0;
-  margin: 0;
-  padding-left: 0;
-  list-style-type: none;
-  z-index: -1;
+  top: 0px;
+  left: 0px;
+  color: #ccc;
 }
-#menu-content > li:hover > ul.second-content {
-  visibility: visible;
-  top: 40px;
-  z-index: 1;
-  transition: all 0.3s;
+#global-menu-content > li > ul li > span,
+#global-menu-content > li > ul li > label {
+    color: #aaa;
 }
-#menu-content > li > ul.second-content > li {
-  text-align: center;
-  width: 200px;
-  height: 40px;
+#global-menu-content > li > ul li > a {
+  color: #ccc;
 }
-#menu-content > li > ul.second-content > li > a {
-  display: block;
-  line-height: 40px;
-  background: #444;
+#global-menu-content > li > ul li > a:hover {
   color: #fff;
-  font-size: 80%;
-  text-decoration: none;
 }
-#menu-content > li > ul.second-content > li > a:hover {
-  background: #e9f0f2;
-  color: #586767;
+#global-menu-content > li ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+/* ヘッダーのグローバルメニュー（モバイル用設定） */
+#menu-toggle-checkbox {
+  display: none;
+}
+#global-menu-btn,
+#global-menu-btn-background {
+  display: none;
+}
+h1#mobile-title {
+  display: none;
 }
 @media screen and (max-width: 768px) {
-  #menu-inner {
-    width: 100%;
-    height: auto;
+  header#blog-title {
+    display: none;
   }
-  #btn-content {
-    text-align: right;
-  }
-  #menu-btn {
-    display: inline-block;
+  /* メニューボタンの制御 */
+  #global-menu-btn {
+    display: block;
+    margin: 0;
     padding: 8px 15px;
-    margin: 5px;
     cursor: pointer;
-    background: #e9f0f2;
-    color: #586767;
-    font-size: 80%;
+    border-right: 1px solid gray;
+    width: 42px;
   }
-  #menu-content {
+  #global-menu-btn > i.menu-close {
     display: none;
-    width: 100%;
+    color: #fb703a;
   }
-  #menu-content > li {
-    width: 100%;
-    height: 40px;
-    float: none;
+  #menu-toggle-checkbox:checked ~ #global-menu-btn > i.menu-open {
+    display: none;
   }
-  #menu-content > li > a {
+  #menu-toggle-checkbox:checked ~ #global-menu-btn > i.menu-close {
+    display: block;
+  }
+  /* メニューの制御 */
+  #global-menu-content {
+    display: none;
+  }
+  #menu-toggle-checkbox:checked ~ #global-menu-content {
+    display: block;
+  }
+  #menu-toggle-checkbox:checked ~ #global-menu-btn-background {
+    left: 0; /* 画面内に表示させる */
+  }
+  /* ドロップダウンメニューを閉じる領域のデザイン */
+  #global-menu-btn-background {
+    display: block;
     width: 100%;
-    line-height: 40px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%; /* 画面外に表示させる */
+    z-index: 999; /* ドロップダウンメニューより下にする */
+  }
+  /* ドロップダウンメニューのデザイン */
+  #global-menu-content {
+    position: absolute;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    top: 81px;
+    left: 0px;
+    background-color: #444;
+    border-top: 1px solid #ccc;
+    z-index: 1000; /* 閉じる領域より上にする */
+  }
+  #global-menu-content > li > a,
+  #global-menu-content > li > span,
+  #global-menu-content > li > label {
+    display: static;
     padding: 0;
-    text-decoration: none;
   }
-  #menu-content > li:hover > ul.second-content {
-    display: none;
+  #global-menu-content > li:hover > a,
+  #global-menu-content > li:hover > span,
+  #global-menu-content > li:hover > label {
+    color: #ccc;
   }
-  #menu-content > li > a > .blogicon-chevron-down {
-    display: none;
+  #global-menu-content > li > ul {
+    display: block;
+  }
+  #global-menu-content > li:hover > ul {
+    /* PC用設定のキャンセル */
+    position: static;
+    padding: 0;
+    z-index: 1;
+    background: #444;
+    border: none;
+    border-radius: 0;
+    animation: none;
+  }
+  #global-menu-content li {
+    position: relative;
+    margin: 15px 0 15px 15px;
+    padding-left: 20px;
+  }
+  #global-menu-content ul::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    transform: rotate(45deg);
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    margin-right: 5px;
+  }
+  #global-menu-content > li a::before,
+  #global-menu-content > li span::before,
+  #global-menu-content > li label::before {
+    content: '・';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #ccc;
+  }
+  #global-menu-content > li > span,
+  #global-menu-content > li > label {
+    color: #aaa;
+  }
+  #global-menu-content > li > a {
+    color: #ccc;
+  }
+  #global-menu-content > li a:hover {
+    color: #fff;
+  }
+  /* メニューのタイトル */
+  h1#mobile-title {
+    display: block;
+    margin: 0 20px;
+  }
+  /* メニューの検索フォーム */
+  #global-menu form.search-form {
+    margin: 6px 6px 6px auto;
   }
 }

@@ -1,0 +1,7 @@
+<script id="global-menu-settings" type="application/json">
+  {
+    "delimiter": "__"
+  }
+</script>
+<script>"use strict";document.addEventListener("DOMContentLoaded",function(){var a=function(a,b){var c=document.createElement("a");return c.setAttribute("href",a),c.textContent=b,c},b=function(a,b){var c=document.createElement("label");return b&&c.classList.add(b),c.textContent=a,c},c=function getSettings(){var a=document.getElementById("global-menu-settings");return a?JSON.parse(a.text):{delimiter:"__"}}();(function buildGlobalCategoryMenu(c){var d=document.querySelector("div.hatena-module-category > div.hatena-module-body");if(d){var e=d.querySelectorAll("ul > li > a");if(e.length){var f=document.getElementById("global-menu-content");f&&e.forEach(function(d){var e=d.getAttribute("href"),g=d.textContent.trim().split(c.delimiter),h=null;g.forEach(function(c,d){var i=c.replace(/\s+/g,"").replace(/\(\d+\)/g,""),j="category-".concat(i),k="category-level-".concat(d),l=d+1===g.length,m=f.querySelector(".".concat(k,".").concat(j));if(m){if(l){var n=m.querySelector("ul");m.textContent="",m.appendChild(a(e,i)),m.appendChild(n)}h=m}else{var o=document.createElement("li");if(o.classList.add(k,j),l?o.appendChild(a(e,i)):o.appendChild(b(i,"category-li-label")),0===d)f.appendChild(o);else{var p=h.querySelector("ul");if(p)p.appendChild(o);else{var q=document.createElement("ul");q.appendChild(o),h.appendChild(q)}}h=o}})})}}})(c)});</script>
+

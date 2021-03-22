@@ -8,27 +8,38 @@
 独自モジュールについては[ブログ](https://multimineral-tech.com)で説明を行います。
 原則、ここでは開発のための情報を掲載します。
 
-## 独自モジュールの使い方
+## 独自モジュールの使い方（公開）
 
 ### カテゴリの階層化ツール
 
-| 利用ファイル | 内容 |
-| ------------ | ---- |
-| [category.html](dist/html/category.html) | T.B.D. |
-| [category.css](dist/css/category.css)    | T.B.D. |
+| 利用ファイル |
+| ------------ |
+| [category.html](dist/html/category.html) |
+| [category.css](dist/css/category.css)    |
 
-T.B.D.
+設定方法はこちら。
+https://multimineral-tech.com/entry/2021/03/01/205630
 
 
 ### 記事ヘッダーの更新日追加ツール
 
-| 利用ファイル | 内容 |
-| ------------ | ---- |
-| [updated-at.html](dist/html/updated-at.html) | T.B.D. |
-| [updated-at.css](dist/css/updated-at.css)  | T.B.D. |
+| 利用ファイル |
+| ------------ |
+| [updated-at.html](dist/html/updated-at.html) |
+| [updated-at.css](dist/css/updated-at.css)  |
 
 T.B.D.
 
+## 独自モジュールの使い方（非公開）
+
+### カテゴリの階層化ツール
+
+| 利用ファイル |
+| ------------ |
+| [global-global-menu.html](dist/html/global-global-menu.html) |
+| [global-menu.css](dist/css/global-menu.css)    |
+
+T.B.D.
 
 ## 開発者向け
 
