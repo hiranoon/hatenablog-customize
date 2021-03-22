@@ -106,7 +106,7 @@ T.B.D.
         ↑
         ↑（変換 : Babel）
         ↑
-        └─./src/*.js
+        └─./src/js/*.js
 ```
 
 ```
@@ -132,13 +132,13 @@ T.B.D.
 │  ↑
 │  ↑（変換 : Babel）
 │  ↑
-│  └─./src/*.js
+│  └─./src/js/*.js
 │
 └─./demo/bundle.css
     ↑
     ↑（参照 : @import）
     ↑
-    └─./dist/*.css
+    └─./dist/css/*.css
 ```
 
 

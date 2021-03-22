@@ -6,9 +6,9 @@
   "scripts": {
     "build-demo-js": "babel ./src/js --out-file ./demo/bundle.js",
     "build-dist-css": "cp ./src/css/*.css ./dist/css",
-    "build-dist-html": "bash ./scripts/build-dist-html.sh",
     "build-dist-js": "babel ./src/js --out-dir ./dist/js",
-    "build": "npm run build-demo-js && npm run build-dist-css && npm run build-dist-html && npm run build-dist-js",
+    "build-dist-html": "bash ./scripts/build-dist-html.sh",
+    "build": "npm run build-demo-js && npm run build-dist-css && npm run build-dist-js && npm run build-dist-html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
