@@ -12,6 +12,9 @@
 /* 記事ヘッダーの作成日・更新日 */
 @import "../dist/css/updated-at.css";
 
+/* 記事一覧 */
+@import "../dist/css/archive.css";
+
 /* 記事内 */
 @import "../dist/css/article.css";
 
