@@ -1,3 +1,14 @@
+/* ソーシャルボタン */
+.social-buttons {
+  border: 1px solid #ccc;
+  background-color: #f9fafb;
+  margin: 15px 0;
+  padding: 15px;
+}
+.social-buttons .social-button-item {
+  margin: 0 5px;
+}
+
 /* 記事内の見出し */
 .entry-content h2,
 .entry-content h3,
