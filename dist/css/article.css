@@ -1,11 +1,11 @@
 /* ソーシャルボタン */
-.social-buttons {
+.entry-inner .social-buttons {
   border: 1px solid #ccc;
   background-color: #f9fafb;
   margin: 15px 0;
   padding: 15px;
 }
-.social-buttons .social-button-item {
+.entry-inner .social-buttons .social-button-item {
   margin: 0 5px;
 }
 
